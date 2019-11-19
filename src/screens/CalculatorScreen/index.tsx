@@ -1,16 +1,22 @@
 import React from 'react';
 import { View } from 'react-native';
+import { connect } from 'react-redux';
 import ResultDisplay from '../../components/molecules/ResultDisplay';
 import Keyboard from '../../components/molecules/Keyboard';
 import CalculatorProvider, { CalculatorContext } from './state';
 import styles from './styles';
 
-class Calculator extends React.Component {
+interface Props {
+  calculator: {}
+}
+
+class Calculator extends React.Component<Props> {
   static navigationOptions = () => ({
     header: null
   })
 
   render() {
+    console.log(this.props.calculator)
     return (
       <View style={styles.main}>
         <CalculatorProvider>
@@ -38,4 +44,8 @@ class Calculator extends React.Component {
   }
 }
 
-export default Calculator;
+const mapState = state => ({
+  calculator: state.calculator,
+});
+
+export default connect(mapState)(Calculator);
