@@ -7,17 +7,17 @@ import OperaterButton from '../../atoms/OperaterButton'
 const Keyboard = ({ handleOnPressNumber, handleOnPressOperater }) => (
   <View style={styles.main}>
     <View style={styles.row}>
-      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="c" title="c" />
-      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="d" title="d" />
-      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="%" title="%" />
-      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="/" title={'/'} />
+      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="c" title="C" />
+      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="ce" title="CE" />
+      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="del" title="⌫" />
+      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="/" title={'÷'} />
     </View>
 
     <View style={styles.row}>
       <NumberButton handleOnPress={handleOnPressNumber} width={'quarter'} name="7" title="7" />
       <NumberButton handleOnPress={handleOnPressNumber} width={'quarter'} name="8" title="8" />
       <NumberButton handleOnPress={handleOnPressNumber} width={'quarter'} name="9" title="9" />
-      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="x" title="x" />
+      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="x" title="×" />
     </View>
 
     <View style={styles.row}>
@@ -36,8 +36,8 @@ const Keyboard = ({ handleOnPressNumber, handleOnPressOperater }) => (
 
     <View style={styles.row}>
       <NumberButton handleOnPress={handleOnPressNumber} width={'half'} name="0" title="0" />
-      <NumberButton handleOnPress={handleOnPressNumber} width={'quarter'} name="." title="." />
-      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="=" title="=" />
+      <NumberButton handleOnPress={handleOnPressOperater} width={'quarter'} name="." title="•" />
+      <OperaterButton handleOnPress={handleOnPressOperater} width={'quarter'} name="=" title="＝" />
     </View>
   </View>
 )

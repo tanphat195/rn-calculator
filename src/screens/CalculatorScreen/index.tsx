@@ -1,11 +1,14 @@
-import React from 'react'
-import { View } from 'react-native'
-import ResultDisplay from '../../components/molecules/ResultDisplay'
-import Keyboard from '../../components/molecules/Keyboard'
-import CalculatorProvider, { CalculatorContext } from './state'
-import styles from './styles'
+import React from 'react';
+import { View } from 'react-native';
+import ResultDisplay from '../../components/molecules/ResultDisplay';
+import Keyboard from '../../components/molecules/Keyboard';
+import CalculatorProvider, { CalculatorContext } from './state';
+import styles from './styles';
 
 class Calculator extends React.Component {
+  static navigationOptions = () => ({
+    header: null
+  })
 
   render() {
     return (
@@ -13,7 +16,7 @@ class Calculator extends React.Component {
         <CalculatorProvider>
           <View style={styles.display}>
             <CalculatorContext.Consumer>
-              {(ctx) => (
+              {(ctx: any) => (
                 <ResultDisplay value={ctx.value} inputs={ctx.inputs} />
               )}
             </CalculatorContext.Consumer>
@@ -21,7 +24,7 @@ class Calculator extends React.Component {
 
           <View style={styles.keyboard}>
             <CalculatorContext.Consumer>
-              {(ctx) => (
+              {(ctx: any) => (
                 <Keyboard
                   handleOnPressNumber={ctx.handleOnPressNumber}
                   handleOnPressOperater={ctx.handleOnPressOperater}
@@ -31,8 +34,8 @@ class Calculator extends React.Component {
           </View>
         </CalculatorProvider>
       </View>
-    )
+    );
   }
 }
 
-export default Calculator
+export default Calculator;

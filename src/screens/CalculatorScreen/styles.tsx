@@ -5,7 +5,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   display: {
-    height: '20%',
+    height: '26%',
   },
   keyboard: {
     flex: 1,
