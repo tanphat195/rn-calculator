@@ -4,7 +4,7 @@ import styles from './styles'
 
 interface Props {
   inputs: [],
-  value: number,
+  value: string,
 }
 
 class ResultDisplay extends React.Component<Props> {

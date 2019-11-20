@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-  main: {
+  container: {
     flex: 1,
   },
   display: {
@@ -9,5 +9,13 @@ export default StyleSheet.create({
   },
   keyboard: {
     flex: 1,
+  },
+  showBtn: {
+    position: 'absolute',
+    top: 30,
+    left: 10,
+    width: 20,
+    height: 20,
+    zIndex: 1,
   }
 })
