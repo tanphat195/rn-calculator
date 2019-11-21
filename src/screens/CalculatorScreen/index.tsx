@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableHighlight, AsyncStorage } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation'
 import { connect } from 'react-redux';
 import { getCalculatorHistory, setCalculatorHistory } from '../../utils';
-import RNFS from 'react-native-fs';
 import ResultDisplay from '../../components/molecules/ResultDisplay';
 import Keyboard from '../../components/molecules/Keyboard';
 import styles from './styles';
@@ -112,16 +111,6 @@ class Calculator extends React.Component<Props> {
     })
   }
 
-  readFile = async (MyPath) => {
-    try {
-      const path =MyPath+ "/rn.txt";
-      const contents = await RNFS.readDir(RNFS.DocumentDirectoryPath, "utf8");
-      return("" + contents);
-    } catch (e) {
-      console.log("" + e);
-    }
-  };
-
   handleOperater = (prevState, finalOperater) => {
     let result = parseFloat(prevState.value)
 
@@ -154,9 +143,9 @@ class Calculator extends React.Component<Props> {
     return (
       <View style={styles.container}>
         <View style={styles.showBtn}>
-          <TouchableHighlight onPress={this.showHistory} >
-            <Text>✉</Text>
-          </TouchableHighlight>
+          <TouchableOpacity onPress={this.showHistory} >
+            <Text>History</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.display}>
           <ResultDisplay value={value} inputs={inputs} />

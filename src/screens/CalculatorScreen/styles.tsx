@@ -14,8 +14,6 @@ export default StyleSheet.create({
     position: 'absolute',
     top: 30,
     left: 10,
-    width: 20,
-    height: 20,
     zIndex: 1,
   }
 })
