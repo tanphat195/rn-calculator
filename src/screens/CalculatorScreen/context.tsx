@@ -4,7 +4,7 @@ export const CalculatorContext = React.createContext({})
 
 type IState = {
   inputs: [],
-  result: number,
+  result: string,
   value: string,
   operater: string,
 }
@@ -14,7 +14,7 @@ class CalculatorProvider extends React.Component<{}, IState> {
     super(props)
     this.state = {
       inputs: [],
-      result: 0,
+      result: '0',
       value: '0',
       operater: '',
     }
@@ -74,7 +74,7 @@ class CalculatorProvider extends React.Component<{}, IState> {
     if (operater === 'c') {
       this.setState({
         inputs: [],
-        result: 0,
+        result: '0',
         operater: '',
         value: '0',
       })
@@ -121,7 +121,7 @@ class CalculatorProvider extends React.Component<{}, IState> {
           break
       }
     }
-    return result
+    return `${result}`
   }
 
   render() {
