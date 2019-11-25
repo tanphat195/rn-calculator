@@ -1,15 +1,18 @@
 import React from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { connect } from 'react-redux'
+import { View, Text } from 'react-native'
 import styles from './styles'
 
 interface Props {
-  inputs: [],
-  value: string,
+  calculator: {
+    inputs: [],
+    value: string,
+  }
 }
 
 class ResultDisplay extends React.Component<Props> {
   render() {
-    const { inputs, value } = this.props
+    const { inputs, value } = this.props.calculator 
 
     return (
       <View style={styles.main}>
@@ -24,4 +27,8 @@ class ResultDisplay extends React.Component<Props> {
   }
 }
 
-export default ResultDisplay
+const mapState = state => ({
+  calculator: state.calculator,
+});
+
+export default connect(mapState)(ResultDisplay)

@@ -1,14 +1,14 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { UPDATE_CALCULATOR } from '../reducers/calculatorReducer';
+import { ON_PRESS_KEY } from '../reducers/calculatorReducer';
 
-export function* watchUpdateCalculator() {
-  yield takeLatest('INVOKE_CALCULATOR', handleUpdate);
+export function* WATCH_PRESS_KEY() {
+  yield takeLatest('WATCH_PRESS_KEY', workerPressKey);
 }
 
-function* handleUpdate(action) {
+function* workerPressKey(action) {
   try {
     yield put({
-      type: UPDATE_CALCULATOR,
+      type: ON_PRESS_KEY,
       payload: action.payload,
     })
   } catch (err) {

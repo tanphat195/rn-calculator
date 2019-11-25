@@ -1,8 +1,8 @@
 import { all, fork } from 'redux-saga/effects';
-import { watchUpdateCalculator } from './calculatorSaga';
+import { WATCH_PRESS_KEY } from './calculatorSaga';
 
 export default function* () {
   yield all([
-    fork(watchUpdateCalculator),
+    fork(WATCH_PRESS_KEY),
   ]);
 }

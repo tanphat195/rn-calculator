@@ -5,19 +5,24 @@ export default StyleSheet.create({
     height: '100%',
     borderTopWidth: 1,
     borderRightWidth: 1,
-    borderColor: 'rgba(0,0,0,0.2)',
+    borderColor: 'rgba(0,0,0,0.3)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'orange',
   },
   text: {
-    fontSize: 28,
+    fontSize: 24
   },
   half: {
     width: '50%'
   },
   quarter: {
     width: '25%'
+  },
+  bgOrange: {
+    backgroundColor: 'orange',
+  },
+  bgWhite: {
+    backgroundColor: 'white',
   }
 })
