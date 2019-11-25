@@ -19,7 +19,7 @@ const actionMap = {
   [ON_PRESS_KEY]: (state, payload) => {
     const saveHistory = async (record) => {
       const history = await getCalculatorHistory()
-      await setCalculatorHistory([...history, record])
+      await setCalculatorHistory([record, ...history])
     }
   
     const handleOperater = (prevState, finalOperater) => {

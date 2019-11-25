@@ -17,7 +17,7 @@ interface State {
 
 class HistoryScreen extends React.Component<{}, State> {
   static navigationOptions = () => ({
-    title: 'History Operater'
+    title: 'History'
   })
 
   constructor(props) {

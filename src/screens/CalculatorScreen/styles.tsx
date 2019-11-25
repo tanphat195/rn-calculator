@@ -11,9 +11,6 @@ export default StyleSheet.create({
     flex: 1,
   },
   showBtn: {
-    position: 'absolute',
-    top: 30,
-    left: 10,
-    zIndex: 1,
+    marginRight: 10
   }
 })
