@@ -1,10 +1,10 @@
 {
-  "webpackServerPort": 19006,
-  "devToolsPort": 19002,
+  "webpackServerPort": 19007,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 7176,
+  "packagerPort": 19004,
+  "packagerPid": 12020,
   "expoServerNgrokUrl": "https://ge-3uu.anonymous.rn-calculator.exp.direct",
   "packagerNgrokUrl": "https://packager.ge-3uu.anonymous.rn-calculator.exp.direct",
-  "ngrokPid": 8728
+  "ngrokPid": 9716
 }

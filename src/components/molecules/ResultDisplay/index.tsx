@@ -10,21 +10,19 @@ interface Props {
   }
 }
 
-class ResultDisplay extends React.Component<Props> {
-  render() {
-    const { inputs, value } = this.props.calculator 
+const ResultDisplay: React.FC<Props> = (props) => {
+  const { inputs, value } = props.calculator 
 
-    return (
-      <View style={styles.main}>
-        <View style={styles.description}>
-          {inputs.map((item, index) => (
-            <Text key={index} style={styles.cell}>{item}</Text>
-          ))}
-        </View>
-        <Text style={styles.value}>{value}</Text>
+  return (
+    <View style={styles.main}>
+      <View style={styles.description}>
+        {inputs.map((item, index) => (
+          <Text key={index} style={styles.cell}>{item}</Text>
+        ))}
       </View>
-    )
-  }
+      <Text style={styles.value}>{value}</Text>
+    </View>
+  )
 }
 
 const mapState = state => ({

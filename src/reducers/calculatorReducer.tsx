@@ -136,4 +136,4 @@ const actionMap = {
 export default (state: IState = initialState, action) => {
   const fn = actionMap[action.type];
   return fn ? fn(state, action.payload) : state;
-}
+};

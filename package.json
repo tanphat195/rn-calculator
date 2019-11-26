@@ -11,6 +11,7 @@
     "gen:components:organisms": "hygen components new --level organisms"
   },
   "dependencies": {
+    "@unimodules/react-native-adapter": "^4.0.0",
     "expo": "^35.0.0",
     "global": "^4.4.0",
     "react": "16.8.3",

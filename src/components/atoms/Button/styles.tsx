@@ -19,10 +19,14 @@ export default StyleSheet.create({
   quarter: {
     width: '25%'
   },
-  bgOrange: {
-    backgroundColor: 'orange',
+  bgBlue: {
+    backgroundColor: '#41BAEE',
   },
   bgWhite: {
     backgroundColor: 'white',
+  },
+  whiteText: {
+    color: 'white',
+    fontSize: 28,
   }
 })

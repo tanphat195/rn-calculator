@@ -10,14 +10,16 @@ export default StyleSheet.create({
     flexDirection: 'column',
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
+    backgroundColor: '#41BAEE',
+    padding: 16,
     marginVertical: 8,
+    borderRadius: 12,
   },
   header: {
     fontSize: 32,
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
+    color: 'white'
   },
 });

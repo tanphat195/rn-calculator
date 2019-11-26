@@ -8,27 +8,24 @@ interface Props {
   title: string
   width: 'half' | 'quarter',
   handleOnPress: (name: string) => void,
-  bgColor?: 'bgOrange' |'bgWhite',
+  bgColor?: 'bgBlue' |'bgWhite',
+  textColor?: 'whiteText',
 }
 
-class Button extends React.Component<Props> {
-  onPress = () => {
-    const { handleOnPress, name } = this.props
+const Button: React.FC<Props> = (props) => {
+  const onPress = () => {
+    const { handleOnPress, name } = props
     handleOnPress(name)
   }
 
-  render() {
-    const { title, width, bgColor } = this.props
-
-    return (
-      <TouchableHighlight
-        onPress={this.onPress}
-        style={[styles.main, styles[width], styles[bgColor]]}
-      >
-        <Text style={styles.text}>{title}</Text>
-      </TouchableHighlight>
-    )
-  }
+  return (
+    <TouchableHighlight
+      onPress={onPress}
+      style={[styles.main, styles[props.width], styles[props.bgColor]]}
+    >
+      <Text style={[styles.text, styles[props.textColor]]}>{props.title}</Text>
+    </TouchableHighlight>
+  )
 }
 
 const mapDispatch = dispatch => ({

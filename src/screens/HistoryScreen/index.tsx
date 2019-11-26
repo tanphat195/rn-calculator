@@ -1,54 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, FlatList } from 'react-native'
+import { NavigationStackScreenComponent } from 'react-navigation-stack'
 import { getCalculatorHistory } from '../../utils'
 import styles from './styles'
 
-function Item({ title }) {
+const Item = ({ title }) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+)
+
+const HistoryScreen: NavigationStackScreenComponent = () => {
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    getHistory()
+  }, [])
+
+  const getHistory = async () => {
+    const list = await getCalculatorHistory()
+    setList(list)
+  }
+  
   return (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+    <View style={styles.container}>
+      <FlatList
+        data={list}
+        renderItem={({ item }) => <Item title={item} />}
+        keyExtractor={(item, index) => `${index}`}
+      />
     </View>
   )
 }
 
-interface State {
-  list: []
-}
+HistoryScreen.navigationOptions = () => ({
+  title: 'History'
+})
 
-class HistoryScreen extends React.Component<{}, State> {
-  static navigationOptions = () => ({
-    title: 'History'
-  })
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      list: []
-    }
-  }
-
-  componentDidMount() {
-    this.getHistory()
-  }
-
-  getHistory = async () => {
-    const list = await getCalculatorHistory()
-    this.setState({ list })
-  }
-  
-  render() {
-    const { list } = this.state
-
-    return (
-      <View style={styles.container}>
-        <FlatList
-          data={list}
-          renderItem={({ item }) => <Item title={item} />}
-          keyExtractor={(item, index) => `${index}`}
-        />
-      </View>
-    )
-  }
-}
-
-export default HistoryScreen
+export default HistoryScreen;
